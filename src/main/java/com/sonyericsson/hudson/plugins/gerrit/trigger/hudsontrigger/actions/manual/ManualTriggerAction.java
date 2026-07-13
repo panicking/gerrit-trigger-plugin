@@ -601,8 +601,16 @@ public class ManualTriggerAction implements RootAction {
         if (url != null && !url.isEmpty()) {
             return url;
         } else if (!change.optString("number", "").isEmpty()) {
-            if (getServerConfig(serverName) != null) {
-                return getServerConfig(serverName).getGerritFrontEndUrlFor(
+            IGerritHudsonTriggerConfig config = getServerConfig(serverName);
+            if (config == null) {
+                // Fall back to first enabled server when serverName is null or not found
+                ArrayList<String> enabledServers = getEnabledServers();
+                if (!enabledServers.isEmpty()) {
+                    config = getServerConfig(enabledServers.get(0));
+                }
+            }
+            if (config != null) {
+                return config.getGerritFrontEndUrlFor(
                     change.getString("number"), "1");
             } else {
                 logger.error("Could not get config for the server: {}", serverName);

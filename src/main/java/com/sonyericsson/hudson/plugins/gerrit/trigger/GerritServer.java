@@ -255,7 +255,7 @@ public class GerritServer implements Describable<GerritServer>, Action {
     public void setConfig(IGerritHudsonTriggerConfig config) {
         checkPermission();
         this.config = config;
-        gerritQueryHnadler = new GerritQueryHandler(config);
+        gerritQueryHnadler = null;
     }
 
     /**
