@@ -24,6 +24,7 @@
 package com.sonyericsson.hudson.plugins.gerrit.trigger;
 
 import com.sonyericsson.hudson.plugins.gerrit.trigger.utils.StringUtil;
+import hudson.Functions;
 import com.sonymobile.tools.gerrit.gerritevents.ConnectionListener;
 import com.sonymobile.tools.gerrit.gerritevents.GerritEventListener;
 import com.sonymobile.tools.gerrit.gerritevents.dto.GerritEvent;
@@ -339,11 +340,7 @@ public class GerritProjectListUpdater implements ConnectionListener, NamedGerrit
     private List<String> loadProjectsViaRest(IGerritHudsonTriggerConfig activeConfig)
             throws IOException {
         String frontEndUrl = activeConfig.getGerritFrontEndUrl();
-        StringBuilder urlBuilder = new StringBuilder(frontEndUrl);
-        if (!frontEndUrl.endsWith("/")) {
-            urlBuilder.append('/');
-        }
-        urlBuilder.append("a/projects/?d");
+        String url = Functions.joinPath(frontEndUrl, "a/projects/?d");
 
         Credentials httpCredentials = activeConfig.getHttpCredentials();
         CredentialsProvider credsProvider = new BasicCredentialsProvider();
@@ -351,7 +348,7 @@ public class GerritProjectListUpdater implements ConnectionListener, NamedGerrit
         HttpClient httpClient = HttpClients.custom()
                 .setDefaultCredentialsProvider(credsProvider)
                 .build();
-        HttpGet httpGet = new HttpGet(urlBuilder.toString());
+        HttpGet httpGet = new HttpGet(url);
         HttpResponse response = httpClient.execute(httpGet);
         int statusCode = response.getStatusLine().getStatusCode();
         if (statusCode != HttpURLConnection.HTTP_OK) {
