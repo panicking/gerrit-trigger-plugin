@@ -843,6 +843,13 @@ public class Config implements IGerritHudsonTriggerConfig {
                 + " (see help for more).";
     }
 
+    /**
+     * Get the command for successful builds.
+     *
+     * @return the command string.
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#getCmdBuildSuccessful()} instead.
+     */
+    @Deprecated
     @Override
     public String getGerritCmdBuildSuccessful() {
         return getCommandTemplates().getCmdBuildSuccessful();
@@ -869,6 +876,13 @@ public class Config implements IGerritHudsonTriggerConfig {
         getCommandTemplates().setCmdBuildSuccessful(cmd);
     }
 
+    /**
+     * Get the command for unstable builds.
+     *
+     * @return the command string.
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#getCmdBuildUnstable()} instead.
+     */
+    @Deprecated
     @Override
     public String getGerritCmdBuildUnstable() {
         return getCommandTemplates().getCmdBuildUnstable();
@@ -895,6 +909,13 @@ public class Config implements IGerritHudsonTriggerConfig {
         getCommandTemplates().setCmdBuildUnstable(cmd);
     }
 
+    /**
+     * Get the command for failed builds.
+     *
+     * @return the command string.
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#getCmdBuildFailed()} instead.
+     */
+    @Deprecated
     @Override
     public String getGerritCmdBuildFailed() {
         return getCommandTemplates().getCmdBuildFailed();
@@ -921,6 +942,13 @@ public class Config implements IGerritHudsonTriggerConfig {
         getCommandTemplates().setCmdBuildFailed(cmd);
     }
 
+    /**
+     * Get the command for started builds.
+     *
+     * @return the command string.
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#getCmdBuildStarted()} instead.
+     */
+    @Deprecated
     @Override
     public String getGerritCmdBuildStarted() {
         return getCommandTemplates().getCmdBuildStarted();
@@ -947,6 +975,13 @@ public class Config implements IGerritHudsonTriggerConfig {
         getCommandTemplates().setCmdBuildStarted(cmd);
     }
 
+    /**
+     * Get the command for not-built builds.
+     *
+     * @return the command string.
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#getCmdBuildNotBuilt()} instead.
+     */
+    @Deprecated
     @Override
     public String getGerritCmdBuildNotBuilt() {
         return getCommandTemplates().getCmdBuildNotBuilt();
@@ -973,6 +1008,13 @@ public class Config implements IGerritHudsonTriggerConfig {
         getCommandTemplates().setCmdBuildNotBuilt(cmd);
     }
 
+    /**
+     * Get the command for aborted builds.
+     *
+     * @return the command string.
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#getCmdBuildAborted()} instead.
+     */
+    @Deprecated
     @Override
     public String getGerritCmdBuildAborted() {
         return getCommandTemplates().getCmdBuildAborted();
