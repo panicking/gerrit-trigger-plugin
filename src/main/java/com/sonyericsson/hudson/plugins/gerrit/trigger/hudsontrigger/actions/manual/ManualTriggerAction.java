@@ -171,6 +171,24 @@ public class ManualTriggerAction implements RootAction {
     }
 
     /**
+     * Get the server config for the given server name, falling back to
+     * the first enabled server when the named server is not found.
+     *
+     * @param serverName the name of the server, or null.
+     * @return the config, or null if no server could be found.
+     */
+    private IGerritHudsonTriggerConfig getServerConfigOrFirst(String serverName) {
+        IGerritHudsonTriggerConfig config = getServerConfig(serverName);
+        if (config == null) {
+            ArrayList<String> enabledServers = getEnabledServers();
+            if (!enabledServers.isEmpty()) {
+                config = getServerConfig(enabledServers.get(0));
+            }
+        }
+        return config;
+    }
+
+    /**
      * Return the front end url of selected server, or first enabled server if
      * selected doesn't exists (happens when serverName is null also). First
      *
@@ -180,14 +198,9 @@ public class ManualTriggerAction implements RootAction {
     @SuppressWarnings("unused")
     //called from jelly
     public String getFrontEndUrl(String serverName) {
-        IGerritHudsonTriggerConfig serverConfig = getServerConfig(serverName);
+        IGerritHudsonTriggerConfig serverConfig = getServerConfigOrFirst(serverName);
         if (serverConfig != null) {
             return serverConfig.getGerritFrontEndUrl();
-        } else {
-            ArrayList<String> enabledServers = getEnabledServers();
-            if (!enabledServers.isEmpty()) {
-                return getServerConfig(enabledServers.get(0)).getGerritFrontEndUrl();
-            }
         }
         return null;
     }
@@ -601,14 +614,7 @@ public class ManualTriggerAction implements RootAction {
         if (url != null && !url.isEmpty()) {
             return url;
         } else if (!change.optString("number", "").isEmpty()) {
-            IGerritHudsonTriggerConfig config = getServerConfig(serverName);
-            if (config == null) {
-                // Fall back to first enabled server when serverName is null or not found
-                ArrayList<String> enabledServers = getEnabledServers();
-                if (!enabledServers.isEmpty()) {
-                    config = getServerConfig(enabledServers.get(0));
-                }
-            }
+            IGerritHudsonTriggerConfig config = getServerConfigOrFirst(serverName);
             if (config != null) {
                 return config.getGerritFrontEndUrlFor(
                     change.getString("number"), "1");

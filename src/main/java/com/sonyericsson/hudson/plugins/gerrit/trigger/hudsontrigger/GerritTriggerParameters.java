@@ -711,21 +711,16 @@ public enum GerritTriggerParameters {
                 }
             }
         }
-        GerritServer firstServer = PluginImpl.getFirstServer_();
-        if (serverName == null && firstServer != null) {
-            serverName = firstServer.getName();
-        } else if (serverName == null) {
+        GerritServer server = PluginImpl.getServerOrFirst_(serverName);
+        if (server == null) {
             return "";
         }
 
-        GerritServer server = PluginImpl.getServer_(serverName);
-        if (server != null) {
-            IGerritHudsonTriggerConfig config = server.getConfig();
-            if (config != null && event.getChange() != null) {
-                url = StringUtil.makeGerritGitUrl(
-                        config.getGerritFrontEndUrl(),
-                        event.getChange().getProject());
-            }
+        IGerritHudsonTriggerConfig config = server.getConfig();
+        if (config != null && event.getChange() != null) {
+            url = StringUtil.makeGerritGitUrl(
+                    config.getGerritFrontEndUrl(),
+                    event.getChange().getProject());
         }
         return url;
     }
