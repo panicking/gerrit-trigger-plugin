@@ -859,7 +859,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Successful.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildSuccessful()
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#setCmdBuildSuccessful(String)} instead.
      */
     @Deprecated
     public void setGerritVerifiedCmdBuildSuccessful(String cmd) {
@@ -870,7 +870,6 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Successful.
      *
      * @param cmd the Gerrit command for successful verification
-     * @see #getGerritCmdBuildSuccessful()
      */
     public void setGerritCmdBuildSuccessful(String cmd) {
         getCommandTemplates().setCmdBuildSuccessful(cmd);
@@ -892,7 +891,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Unstable.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildUnstable()
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#setCmdBuildUnstable(String)} instead.
      */
     @Deprecated
     public void setGerritVerifiedCmdBuildUnstable(String cmd) {
@@ -903,7 +902,6 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Unstable.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildUnstable()
      */
     public void setGerritCmdBuildUnstable(String cmd) {
         getCommandTemplates().setCmdBuildUnstable(cmd);
@@ -925,7 +923,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Failed.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildFailed()
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#setCmdBuildFailed(String)} instead.
      */
     @Deprecated
     public void setGerritVerifiedCmdBuildFailed(String cmd) {
@@ -936,7 +934,6 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Failed.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildFailed()
      */
     public void setGerritCmdBuildFailed(String cmd) {
         getCommandTemplates().setCmdBuildFailed(cmd);
@@ -958,7 +955,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Started.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildStarted()
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#setCmdBuildStarted(String)} instead.
      */
     @Deprecated
     public void setGerritVerifiedCmdBuildStarted(String cmd) {
@@ -969,7 +966,6 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Started.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildStarted()
      */
     public void setGerritCmdBuildStarted(String cmd) {
         getCommandTemplates().setCmdBuildStarted(cmd);
@@ -991,7 +987,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build NotBuilt.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildNotBuilt()
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#setCmdBuildNotBuilt(String)} instead.
      */
     @Deprecated
     public void setGerritVerifiedCmdBuildNotBuilt(String cmd) {
@@ -1002,7 +998,6 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build NotBuilt.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildNotBuilt()
      */
     public void setGerritCmdBuildNotBuilt(String cmd) {
         getCommandTemplates().setCmdBuildNotBuilt(cmd);
@@ -1024,7 +1019,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Aborted.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildAborted()
+     * @deprecated Use {@link #getCommandTemplates()}.{@link GerritCommandTemplates#setCmdBuildAborted(String)} instead.
      */
     @Deprecated
     public void setGerritVerifiedCmdBuildAborted(String cmd) {
@@ -1035,7 +1030,6 @@ public class Config implements IGerritHudsonTriggerConfig {
      * Set Gerrit Verified Cmd Build Aborted.
      *
      * @param cmd the command
-     * @see #getGerritCmdBuildAborted()
      */
     public void setGerritCmdBuildAborted(String cmd) {
         getCommandTemplates().setCmdBuildAborted(cmd);
