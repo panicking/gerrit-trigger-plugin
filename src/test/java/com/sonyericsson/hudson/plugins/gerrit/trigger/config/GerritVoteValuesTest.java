@@ -29,7 +29,6 @@ import net.sf.json.JSONSerializer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 //CS IGNORE MagicNumber FOR NEXT 100 LINES. REASON: Mocks tests.
@@ -40,8 +39,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class GerritVoteValuesTest {
 
     private static final int TEST_OVERRIDE = 99;
-    private static final int FAILED_VERIFIED = -2;
-    private static final int FAILED_CODE_REVIEW = 1;
 
     /**
      * Test that default constructor sets all defaults.
@@ -146,23 +143,4 @@ class GerritVoteValuesTest {
                 "Should be reset to default");
     }
 
-    /**
-     * Test readResolve backward compat for aborted values.
-     */
-    @Test
-    void testReadResolve() {
-        GerritVoteValues v = new GerritVoteValues();
-        // Simulate old data where aborted is null but failed is set
-        v.setBuildAbortedVerifiedValue(null);
-        v.setBuildAbortedCodeReviewValue(null);
-        v.setBuildFailedVerifiedValue(FAILED_VERIFIED);
-        v.setBuildFailedCodeReviewValue(FAILED_CODE_REVIEW);
-
-        Object resolved = v.readResolve();
-        assertNotNull(resolved);
-        assertEquals(Integer.valueOf(FAILED_VERIFIED), v.getBuildAbortedVerifiedValue(),
-                "Aborted verified should fall back to failed verified");
-        assertEquals(Integer.valueOf(FAILED_CODE_REVIEW), v.getBuildAbortedCodeReviewValue(),
-                "Aborted code review should fall back to failed code review");
-    }
 }

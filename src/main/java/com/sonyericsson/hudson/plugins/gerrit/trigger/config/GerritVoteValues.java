@@ -221,22 +221,6 @@ public class GerritVoteValues {
         buildAbortedCodeReviewValue = DEFAULT_GERRIT_BUILD_ABORTED_CODE_REVIEW_VALUE;
     }
 
-    /**
-     * Backward compatibility: when upgrading from an older version that didn't have
-     * aborted build vote values, copy the failed build values as defaults.
-     *
-     * @return the resolved instance.
-     */
-    Object readResolve() {
-        if (buildAbortedVerifiedValue == null && buildFailedVerifiedValue != null) {
-            buildAbortedVerifiedValue = buildFailedVerifiedValue;
-        }
-        if (buildAbortedCodeReviewValue == null && buildFailedCodeReviewValue != null) {
-            buildAbortedCodeReviewValue = buildFailedCodeReviewValue;
-        }
-        return this;
-    }
-
     // ---- Getters ----
 
     /**
