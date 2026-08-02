@@ -1,6 +1,7 @@
 /*
  *  The MIT License
  *
+ *  Copyright 2010 Sony Mobile Communications Inc. All rights reserved.
  *  Copyright 2026 Amarula Solutions. All rights reserved.
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
