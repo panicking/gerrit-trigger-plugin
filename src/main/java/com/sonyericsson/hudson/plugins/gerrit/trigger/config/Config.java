@@ -845,7 +845,7 @@ public class Config implements IGerritHudsonTriggerConfig {
 
     @Override
     public String getGerritCmdBuildSuccessful() {
-        return getCommandTemplatesInternal().getCmdBuildSuccessful();
+        return getCommandTemplates().getCmdBuildSuccessful();
     }
 
     /**
@@ -866,12 +866,12 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @see #getGerritCmdBuildSuccessful()
      */
     public void setGerritCmdBuildSuccessful(String cmd) {
-        getCommandTemplatesInternal().setCmdBuildSuccessful(cmd);
+        getCommandTemplates().setCmdBuildSuccessful(cmd);
     }
 
     @Override
     public String getGerritCmdBuildUnstable() {
-        return getCommandTemplatesInternal().getCmdBuildUnstable();
+        return getCommandTemplates().getCmdBuildUnstable();
     }
 
     /**
@@ -892,12 +892,12 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @see #getGerritCmdBuildUnstable()
      */
     public void setGerritCmdBuildUnstable(String cmd) {
-        getCommandTemplatesInternal().setCmdBuildUnstable(cmd);
+        getCommandTemplates().setCmdBuildUnstable(cmd);
     }
 
     @Override
     public String getGerritCmdBuildFailed() {
-        return getCommandTemplatesInternal().getCmdBuildFailed();
+        return getCommandTemplates().getCmdBuildFailed();
     }
 
     /**
@@ -918,12 +918,12 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @see #getGerritCmdBuildFailed()
      */
     public void setGerritCmdBuildFailed(String cmd) {
-        getCommandTemplatesInternal().setCmdBuildFailed(cmd);
+        getCommandTemplates().setCmdBuildFailed(cmd);
     }
 
     @Override
     public String getGerritCmdBuildStarted() {
-        return getCommandTemplatesInternal().getCmdBuildStarted();
+        return getCommandTemplates().getCmdBuildStarted();
     }
 
     /**
@@ -944,12 +944,12 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @see #getGerritCmdBuildStarted()
      */
     public void setGerritCmdBuildStarted(String cmd) {
-        getCommandTemplatesInternal().setCmdBuildStarted(cmd);
+        getCommandTemplates().setCmdBuildStarted(cmd);
     }
 
     @Override
     public String getGerritCmdBuildNotBuilt() {
-        return getCommandTemplatesInternal().getCmdBuildNotBuilt();
+        return getCommandTemplates().getCmdBuildNotBuilt();
     }
 
     /**
@@ -970,12 +970,12 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @see #getGerritCmdBuildNotBuilt()
      */
     public void setGerritCmdBuildNotBuilt(String cmd) {
-        getCommandTemplatesInternal().setCmdBuildNotBuilt(cmd);
+        getCommandTemplates().setCmdBuildNotBuilt(cmd);
     }
 
     @Override
     public String getGerritCmdBuildAborted() {
-        return getCommandTemplatesInternal().getCmdBuildAborted();
+        return getCommandTemplates().getCmdBuildAborted();
     }
 
     /**
@@ -996,67 +996,67 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @see #getGerritCmdBuildAborted()
      */
     public void setGerritCmdBuildAborted(String cmd) {
-        getCommandTemplatesInternal().setCmdBuildAborted(cmd);
+        getCommandTemplates().setCmdBuildAborted(cmd);
     }
 
     @Override
     public Integer getGerritBuildStartedVerifiedValue() {
-        return getVoteValuesInternal().getBuildStartedVerifiedValue();
+        return getVoteValues().getBuildStartedVerifiedValue();
     }
 
     @Override
     public Integer getGerritBuildStartedCodeReviewValue() {
-        return getVoteValuesInternal().getBuildStartedCodeReviewValue();
+        return getVoteValues().getBuildStartedCodeReviewValue();
     }
 
     @Override
     public Integer getGerritBuildSuccessfulVerifiedValue() {
-        return getVoteValuesInternal().getBuildSuccessfulVerifiedValue();
+        return getVoteValues().getBuildSuccessfulVerifiedValue();
     }
 
     @Override
     public Integer getGerritBuildSuccessfulCodeReviewValue() {
-        return getVoteValuesInternal().getBuildSuccessfulCodeReviewValue();
+        return getVoteValues().getBuildSuccessfulCodeReviewValue();
     }
 
     @Override
     public Integer getGerritBuildFailedVerifiedValue() {
-        return getVoteValuesInternal().getBuildFailedVerifiedValue();
+        return getVoteValues().getBuildFailedVerifiedValue();
     }
 
     @Override
     public Integer getGerritBuildFailedCodeReviewValue() {
-        return getVoteValuesInternal().getBuildFailedCodeReviewValue();
+        return getVoteValues().getBuildFailedCodeReviewValue();
     }
 
     @Override
     public Integer getGerritBuildUnstableVerifiedValue() {
-        return getVoteValuesInternal().getBuildUnstableVerifiedValue();
+        return getVoteValues().getBuildUnstableVerifiedValue();
     }
 
     @Override
     public Integer getGerritBuildUnstableCodeReviewValue() {
-        return getVoteValuesInternal().getBuildUnstableCodeReviewValue();
+        return getVoteValues().getBuildUnstableCodeReviewValue();
     }
 
     @Override
     public Integer getGerritBuildNotBuiltVerifiedValue() {
-        return getVoteValuesInternal().getBuildNotBuiltVerifiedValue();
+        return getVoteValues().getBuildNotBuiltVerifiedValue();
     }
 
     @Override
     public Integer getGerritBuildNotBuiltCodeReviewValue() {
-        return getVoteValuesInternal().getBuildNotBuiltCodeReviewValue();
+        return getVoteValues().getBuildNotBuiltCodeReviewValue();
     }
 
     @Override
     public Integer getGerritBuildAbortedVerifiedValue() {
-        return getVoteValuesInternal().getBuildAbortedVerifiedValue();
+        return getVoteValues().getBuildAbortedVerifiedValue();
     }
 
     @Override
     public Integer getGerritBuildAbortedCodeReviewValue() {
-        return getVoteValuesInternal().getBuildAbortedCodeReviewValue();
+        return getVoteValues().getBuildAbortedCodeReviewValue();
     }
 
     /**
@@ -1064,7 +1064,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildStartedVerifiedValue value
      */
     public void setGerritBuildStartedVerifiedValue(Integer gerritBuildStartedVerifiedValue) {
-        getVoteValuesInternal().setBuildStartedVerifiedValue(gerritBuildStartedVerifiedValue);
+        getVoteValues().setBuildStartedVerifiedValue(gerritBuildStartedVerifiedValue);
     }
 
     /**
@@ -1072,7 +1072,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildSuccessfulVerifiedValue value
      */
     public void setGerritBuildSuccessfulVerifiedValue(Integer gerritBuildSuccessfulVerifiedValue) {
-        getVoteValuesInternal().setBuildSuccessfulVerifiedValue(gerritBuildSuccessfulVerifiedValue);
+        getVoteValues().setBuildSuccessfulVerifiedValue(gerritBuildSuccessfulVerifiedValue);
     }
 
     /**
@@ -1080,7 +1080,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildFailedVerifiedValue value
      */
     public void setGerritBuildFailedVerifiedValue(Integer gerritBuildFailedVerifiedValue) {
-        getVoteValuesInternal().setBuildFailedVerifiedValue(gerritBuildFailedVerifiedValue);
+        getVoteValues().setBuildFailedVerifiedValue(gerritBuildFailedVerifiedValue);
     }
 
     /**
@@ -1088,7 +1088,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildUnstableVerifiedValue value
      */
     public void setGerritBuildUnstableVerifiedValue(Integer gerritBuildUnstableVerifiedValue) {
-        getVoteValuesInternal().setBuildUnstableVerifiedValue(gerritBuildUnstableVerifiedValue);
+        getVoteValues().setBuildUnstableVerifiedValue(gerritBuildUnstableVerifiedValue);
     }
 
     /**
@@ -1096,7 +1096,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildNotBuiltVerifiedValue value
      */
     public void setGerritBuildNotBuiltVerifiedValue(Integer gerritBuildNotBuiltVerifiedValue) {
-        getVoteValuesInternal().setBuildNotBuiltVerifiedValue(gerritBuildNotBuiltVerifiedValue);
+        getVoteValues().setBuildNotBuiltVerifiedValue(gerritBuildNotBuiltVerifiedValue);
     }
 
     /**
@@ -1104,7 +1104,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildAbortedVerifiedValue value
      */
     public void setGerritBuildAbortedVerifiedValue(Integer gerritBuildAbortedVerifiedValue) {
-        getVoteValuesInternal().setBuildAbortedVerifiedValue(gerritBuildAbortedVerifiedValue);
+        getVoteValues().setBuildAbortedVerifiedValue(gerritBuildAbortedVerifiedValue);
     }
 
     /**
@@ -1112,7 +1112,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildStartedCodeReviewValue value
      */
     public void setGerritBuildStartedCodeReviewValue(Integer gerritBuildStartedCodeReviewValue) {
-        getVoteValuesInternal().setBuildStartedCodeReviewValue(gerritBuildStartedCodeReviewValue);
+        getVoteValues().setBuildStartedCodeReviewValue(gerritBuildStartedCodeReviewValue);
     }
 
     /**
@@ -1120,7 +1120,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildSuccessfulCodeReviewValue value
      */
     public void setGerritBuildSuccessfulCodeReviewValue(Integer gerritBuildSuccessfulCodeReviewValue) {
-        getVoteValuesInternal().setBuildSuccessfulCodeReviewValue(gerritBuildSuccessfulCodeReviewValue);
+        getVoteValues().setBuildSuccessfulCodeReviewValue(gerritBuildSuccessfulCodeReviewValue);
     }
 
     /**
@@ -1128,7 +1128,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildFailedCodeReviewValue value
      */
     public void setGerritBuildFailedCodeReviewValue(Integer gerritBuildFailedCodeReviewValue) {
-        getVoteValuesInternal().setBuildFailedCodeReviewValue(gerritBuildFailedCodeReviewValue);
+        getVoteValues().setBuildFailedCodeReviewValue(gerritBuildFailedCodeReviewValue);
     }
 
     /**
@@ -1136,7 +1136,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildUnstableCodeReviewValue value
      */
     public void setGerritBuildUnstableCodeReviewValue(Integer gerritBuildUnstableCodeReviewValue) {
-        getVoteValuesInternal().setBuildUnstableCodeReviewValue(gerritBuildUnstableCodeReviewValue);
+        getVoteValues().setBuildUnstableCodeReviewValue(gerritBuildUnstableCodeReviewValue);
     }
 
     /**
@@ -1144,7 +1144,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildNotBuiltCodeReviewValue value
      */
     public void setGerritBuildNotBuiltCodeReviewValue(Integer gerritBuildNotBuiltCodeReviewValue) {
-        getVoteValuesInternal().setBuildNotBuiltCodeReviewValue(gerritBuildNotBuiltCodeReviewValue);
+        getVoteValues().setBuildNotBuiltCodeReviewValue(gerritBuildNotBuiltCodeReviewValue);
     }
 
     /**
@@ -1152,7 +1152,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      * @param gerritBuildAbortedCodeReviewValue value
      */
     public void setGerritBuildAbortedCodeReviewValue(Integer gerritBuildAbortedCodeReviewValue) {
-        getVoteValuesInternal().setBuildAbortedCodeReviewValue(gerritBuildAbortedCodeReviewValue);
+        getVoteValues().setBuildAbortedCodeReviewValue(gerritBuildAbortedCodeReviewValue);
     }
 
     @Override
@@ -1438,7 +1438,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      *
      * @return the vote values sub-object, never null.
      */
-    private GerritVoteValues getVoteValuesInternal() {
+    public synchronized GerritVoteValues getVoteValues() {
         if (voteValues == null) {
             voteValues = new GerritVoteValues();
         }
@@ -1452,7 +1452,7 @@ public class Config implements IGerritHudsonTriggerConfig {
      *
      * @return the command templates sub-object, never null.
      */
-    private GerritCommandTemplates getCommandTemplatesInternal() {
+    public synchronized GerritCommandTemplates getCommandTemplates() {
         if (commandTemplates == null) {
             commandTemplates = new GerritCommandTemplates();
         }
